@@ -11,7 +11,7 @@ import UIKit
 
 struct ImageRequest {
     static func request(completion: @escaping (Result<ImageModel, Error>) -> Void) {
-        let url = URL(string: "https://v1.alapi.cn/api/bing?token=IcZLwsNPoKBbFTldSnB9&format=json")!
+        let url = URL(string: "https://v1.alapi.cn/api/acg?token=IcZLwsNPoKBbFTldSnB9&format=json")!
       
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             guard error == nil else {
@@ -43,7 +43,8 @@ struct ImageRequest {
             return ImageModel(url: "图片失败，请稍微再试！", copyright: "@yvan", image: nil)
         }
         let url = data["url"] as! String
-        let copyright = data["copyright"] as! String
+//        let copyright = data["copyright"] as! String
+        let copyright = "copyright"
         return ImageModel(url: url, copyright: copyright, image: nil)
     }
 }

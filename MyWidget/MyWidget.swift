@@ -115,9 +115,7 @@ struct MyWidgetImageEntryView : View {
     var body: some View {
         Image(uiImage: YVWidgetImageLoader.shareLoader.getImage(entry.image.url, UIImage()))
             .resizable()
-            .scaledToFit()
-            .cornerRadius(16)
-            .frame(width: 44, height: 44)
+            .scaledToFill()
     }
 }
 
